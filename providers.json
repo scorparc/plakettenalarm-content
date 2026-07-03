@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-07-01",
+  "season": "2026/27",
+  "disclaimer": "Preise sind unverbindliche Orientierungswerte (Jahresbeitrag Haftpflicht, Fahrer ab 23 Jahren, Stand Juli 2026). Der tatsächliche Beitrag hängt von Alter, Fahrzeug und Tarif ab. Links sind Werbelinks (Affiliate).",
+  "providers": [
+    {
+      "id": "huk24",
+      "name": "HUK24",
+      "priceFrom": 22.0,
+      "priceNote": "E-Scooter, Fahrer ab 23 J.",
+      "features": ["Plakette per Post", "Teilkasko optional", "Online-Abschluss in Minuten"],
+      "url": "https://www.huk24.de/fahrzeuge/mopedversicherung",
+      "affiliateNetwork": "financeads",
+      "affiliateParams": {},
+      "highlight": true,
+      "vehicleTypes": ["eScooter", "mofa", "sPedelec"]
+    },
+    {
+      "id": "adac",
+      "name": "ADAC",
+      "priceFrom": 26.0,
+      "priceNote": "Mitglieder-Rabatt möglich",
+      "features": ["Rabatt für ADAC-Mitglieder", "Teilkasko optional"],
+      "url": "https://www.adac.de/produkte/versicherungen/mopedversicherung/",
+      "affiliateNetwork": "financeads",
+      "affiliateParams": {},
+      "highlight": false,
+      "vehicleTypes": ["eScooter", "mofa", "sPedelec"]
+    },
+    {
+      "id": "allianz",
+      "name": "Allianz",
+      "priceFrom": 29.0,
+      "priceNote": "auch mit Diebstahlschutz",
+      "features": ["Teilkasko mit Diebstahlschutz", "großes Servicenetz"],
+      "url": "https://www.allianz.de/auto/mopedversicherung/",
+      "affiliateNetwork": "awin",
+      "affiliateParams": {},
+      "highlight": false,
+      "vehicleTypes": ["eScooter", "mofa", "sPedelec"]
+    },
+    {
+      "id": "devk",
+      "name": "DEVK",
+      "priceFrom": 25.0,
+      "priceNote": "Haftpflicht ab 25 €",
+      "features": ["Plakette auch vor Ort erhältlich", "Teilkasko optional"],
+      "url": "https://www.devk.de/produkte/kfz-versicherung/moped/",
+      "affiliateNetwork": "",
+      "affiliateParams": {},
+      "highlight": false,
+      "vehicleTypes": ["eScooter", "mofa", "sPedelec"]
+    },
+    {
+      "id": "wgv",
+      "name": "WGV",
+      "priceFrom": 23.0,
+      "priceNote": "günstig für junge Fahrer",
+      "features": ["faire Tarife unter 23 J.", "Online-Abschluss"],
+      "url": "https://www.wgv.de/versicherungen/mopedversicherung",
+      "affiliateNetwork": "",
+      "affiliateParams": {},
+      "highlight": false,
+      "vehicleTypes": ["eScooter", "mofa", "sPedelec"]
+    }
+  ]
+}
