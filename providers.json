@@ -1,0 +1,359 @@
+{
+  "disclaimer" : {
+    "de" : "Angebote sind unverbindlich; der Beitrag hängt von Alter, Fahrzeug und Tarif ab. Den aktuellen Preis prüfst du direkt beim Anbieter. Als „Anzeige“ gekennzeichnete Angebote enthalten einen Affiliate-Link; alle übrigen führen direkt zum Anbieter.",
+    "en" : "Offers are non-binding; the premium depends on age, vehicle and tariff. Check the current price directly with the provider. Offers marked \"Ad\" contain an affiliate link; all others link directly to the provider.",
+    "es" : "Las ofertas no son vinculantes; la prima depende de la edad, el vehículo y la tarifa. Consulta el precio actual directamente con el proveedor. Las ofertas marcadas como «Anuncio» contienen un enlace de afiliado; las demás enlazan directamente con el proveedor.",
+    "fr" : "Les offres sont sans engagement ; la cotisation dépend de l'âge, du véhicule et du tarif. Vérifiez le prix actuel directement auprès du fournisseur. Les offres signalées « Publicité » contiennent un lien d'affiliation ; les autres renvoient directement au fournisseur.",
+    "it" : "Le offerte non sono vincolanti; il premio dipende da età, veicolo e tariffa. Verifica il prezzo attuale direttamente con il fornitore. Le offerte contrassegnate con «Pubblicità» contengono un link di affiliazione; tutte le altre rimandano direttamente al fornitore.",
+    "pt" : "As ofertas não são vinculativas; o prémio depende da idade, do veículo e da tarifa. Verifica o preço atual diretamente junto do fornecedor. As ofertas marcadas como «Publicidade» contêm uma ligação de afiliado; todas as outras remetem diretamente para o fornecedor."
+  },
+  "providers" : [
+    {
+      "active" : false,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Tarife mehrerer Versicherer vergleichen",
+          "Direkt online abschließen"
+        ],
+        "en" : [
+          "Compare tariffs from several insurers",
+          "Sign up online"
+        ],
+        "es" : [
+          "Compara tarifas de varias aseguradoras",
+          "Contrata en línea"
+        ],
+        "fr" : [
+          "Comparez les tarifs de plusieurs assureurs",
+          "Souscrivez en ligne"
+        ],
+        "it" : [
+          "Confronta le tariffe di più assicuratori",
+          "Stipula online"
+        ],
+        "pt" : [
+          "Compara tarifas de várias seguradoras",
+          "Adere online"
+        ]
+      },
+      "id" : "covomo",
+      "kind" : "comparison",
+      "name" : "Covomo",
+      "priceFrom" : 0,
+      "priority" : 100,
+      "url" : "https://rechner.covomo.de/versicherungskennzeichen/",
+      "urlByVehicleType" : {
+        "eScooter" : "https://rechner.covomo.de/versicherungskennzeichen/?fahrzeugart=e-scooter",
+        "mofa" : "https://rechner.covomo.de/versicherungskennzeichen/",
+        "sPedelec" : "https://rechner.covomo.de/versicherungskennzeichen/?fahrzeugart=s-pedelec"
+      },
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Plakette per Post",
+          "Teilkasko optional",
+          "Online-Abschluss in Minuten"
+        ],
+        "en" : [
+          "Badge by post",
+          "Partial cover optional",
+          "Sign up online in minutes"
+        ],
+        "es" : [
+          "Placa por correo",
+          "Cobertura parcial opcional",
+          "Contratación online en minutos"
+        ],
+        "fr" : [
+          "Plaque par courrier",
+          "Tous risques partiel en option",
+          "Souscription en ligne en quelques minutes"
+        ],
+        "it" : [
+          "Targa per posta",
+          "Kasko parziale opzionale",
+          "Sottoscrizione online in pochi minuti"
+        ],
+        "pt" : [
+          "Placa por correio",
+          "Danos parciais opcional",
+          "Adesão online em minutos"
+        ]
+      },
+      "highlight" : true,
+      "id" : "huk24",
+      "kind" : "direct",
+      "name" : "HUK24",
+      "priceFrom" : 22,
+      "priority" : 10,
+      "url" : "https://www.huk24.de/mopedversicherung",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Rabatt für ADAC-Mitglieder",
+          "Teilkasko optional"
+        ],
+        "en" : [
+          "Discount for ADAC members",
+          "Partial cover optional"
+        ],
+        "es" : [
+          "Descuento para socios de ADAC",
+          "Cobertura parcial opcional"
+        ],
+        "fr" : [
+          "Réduction pour les membres ADAC",
+          "Tous risques partiel en option"
+        ],
+        "it" : [
+          "Sconto per i soci ADAC",
+          "Kasko parziale opzionale"
+        ],
+        "pt" : [
+          "Desconto para membros ADAC",
+          "Danos parciais opcional"
+        ]
+      },
+      "highlight" : false,
+      "id" : "adac",
+      "kind" : "direct",
+      "name" : "ADAC",
+      "priceFrom" : 26,
+      "priority" : 0,
+      "url" : "https://www.adac.de/produkte/versicherungen/mopedversicherung/",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Teilkasko mit Diebstahlschutz",
+          "großes Servicenetz"
+        ],
+        "en" : [
+          "Partial cover with theft protection",
+          "Large service network"
+        ],
+        "es" : [
+          "Cobertura parcial con protección antirrobo",
+          "Amplia red de servicio"
+        ],
+        "fr" : [
+          "Tous risques partiel avec protection vol",
+          "Grand réseau de service"
+        ],
+        "it" : [
+          "Kasko parziale con protezione furto",
+          "Ampia rete di assistenza"
+        ],
+        "pt" : [
+          "Danos parciais com proteção contra roubo",
+          "Ampla rede de serviço"
+        ]
+      },
+      "highlight" : false,
+      "id" : "allianz",
+      "kind" : "direct",
+      "name" : "Allianz",
+      "priceFrom" : 29,
+      "priority" : 0,
+      "url" : "https://www.allianz.de/auto/mopedversicherung/",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Plakette auch vor Ort erhältlich",
+          "Teilkasko optional"
+        ],
+        "en" : [
+          "Badge also available in branch",
+          "Partial cover optional"
+        ],
+        "es" : [
+          "Placa también disponible en oficina",
+          "Cobertura parcial opcional"
+        ],
+        "fr" : [
+          "Plaque aussi disponible en agence",
+          "Tous risques partiel en option"
+        ],
+        "it" : [
+          "Targa disponibile anche in filiale",
+          "Kasko parziale opzionale"
+        ],
+        "pt" : [
+          "Placa também disponível em balcão",
+          "Danos parciais opcional"
+        ]
+      },
+      "highlight" : false,
+      "id" : "devk",
+      "kind" : "direct",
+      "name" : "DEVK",
+      "priceFrom" : 25,
+      "priority" : 0,
+      "url" : "https://www.devk.de/produkte/kfz-versicherung/kleinkraftrad/moped",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "faire Tarife unter 23 J.",
+          "Online-Abschluss"
+        ],
+        "en" : [
+          "Fair rates under 23",
+          "Online sign-up"
+        ],
+        "es" : [
+          "Tarifas justas para menores de 23 años",
+          "Contratación online"
+        ],
+        "fr" : [
+          "Tarifs équitables avant 23 ans",
+          "Souscription en ligne"
+        ],
+        "it" : [
+          "Tariffe eque sotto i 23 anni",
+          "Sottoscrizione online"
+        ],
+        "pt" : [
+          "Tarifas justas para menores de 23 anos",
+          "Adesão online"
+        ]
+      },
+      "highlight" : false,
+      "id" : "wgv",
+      "kind" : "direct",
+      "name" : "WGV",
+      "priceFrom" : 23,
+      "priority" : 0,
+      "url" : "https://www.wgv.de/auto-mobilitaet/fahrzeuge/mopedversicherung/",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Plakette als Aufkleber per Post",
+          "Online-Abschluss"
+        ],
+        "en" : [
+          "Plate sent by post as a sticker",
+          "Online sign-up"
+        ],
+        "es" : [
+          "Placa enviada por correo como pegatina",
+          "Contratación online"
+        ],
+        "fr" : [
+          "Plaque envoyée par courrier sous forme d'autocollant",
+          "Souscription en ligne"
+        ],
+        "it" : [
+          "Targa inviata per posta come adesivo",
+          "Sottoscrizione online"
+        ],
+        "pt" : [
+          "Placa enviada por correio como autocolante",
+          "Adesão online"
+        ]
+      },
+      "id" : "admiraldirekt",
+      "kind" : "direct",
+      "name" : "AdmiralDirekt",
+      "priceFrom" : 48.99,
+      "priority" : 0,
+      "url" : "https://www.admiraldirekt.de/kfz-versicherungen/moped/",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    },
+    {
+      "active" : true,
+      "affiliateNetwork" : "",
+      "features" : {
+        "de" : [
+          "Moped, Mofa und Roller",
+          "Online-Abschluss"
+        ],
+        "en" : [
+          "Moped, motorised bicycle and scooter",
+          "Online sign-up"
+        ],
+        "es" : [
+          "Ciclomotor, mofa y scooter",
+          "Contratación online"
+        ],
+        "fr" : [
+          "Cyclomoteur, mofa et scooter",
+          "Souscription en ligne"
+        ],
+        "it" : [
+          "Ciclomotore, mofa e scooter",
+          "Sottoscrizione online"
+        ],
+        "pt" : [
+          "Ciclomotor, mofa e scooter",
+          "Adesão online"
+        ]
+      },
+      "id" : "diebayerische",
+      "kind" : "direct",
+      "name" : "die Bayerische",
+      "priceFrom" : 73.44,
+      "priority" : 0,
+      "url" : "https://www.diebayerische.de/kfz-versicherung/mopedversicherung/",
+      "vehicleTypes" : [
+        "eScooter",
+        "mofa",
+        "sPedelec"
+      ]
+    }
+  ],
+  "schemaVersion" : 2,
+  "season" : "2026/27",
+  "updatedAt" : "2026-09-13"
+}

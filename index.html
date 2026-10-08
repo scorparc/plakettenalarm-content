@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlakettenAlarm — Erinnerung an das Versicherungskennzeichen</title>
+<meta name="description" content="PlakettenAlarm erinnert Halter von E-Scootern, Mofas, Rollern und S-Pedelecs an den Wechsel des Versicherungskennzeichens zum 1. März und vergleicht Mopedversicherungen. Kostenlose Android-App.">
+<link rel="icon" href="assets/icon.png">
+<meta property="og:title" content="PlakettenAlarm — Erinnerung an das Versicherungskennzeichen">
+<meta property="og:description" content="Countdown zum 1. März, Plakettenfarbe, Checkliste und Anbietervergleich für E-Scooter, Mofa, Roller und S-Pedelec.">
+<meta property="og:image" content="https://scorparc.github.io/plakettenalarm-content/assets/icon.png">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --gruen:#1B7A3D; --schwarz:#1C1C1C; --blau:#1D4E9E;
+  --bg:#fbfaf7; --surface:#ffffff; --line:#e4e1da;
+  --text:#1a1a19; --muted:#5f5c55; --accent:var(--gruen);
+  --radius:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#14161a; --surface:#1c1f24; --line:#2c3038;
+    --text:#eceae6; --muted:#a2a69e; --accent:#4bbf72;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+a{color:var(--accent)}
+header{padding:56px 0 40px;text-align:center}
+header img.icon{width:88px;height:88px;border-radius:20px;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+h1{font-size:clamp(28px,5vw,40px);margin:20px 0 6px;letter-spacing:-.02em}
+.claim{font-size:clamp(17px,2.4vw,20px);color:var(--muted);margin:0 auto;max-width:34em}
+.season{
+  margin:36px 0 8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:28px 24px;text-align:center;
+}
+.days{font-size:clamp(40px,9vw,64px);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.days small{display:block;font-size:15px;font-weight:400;color:var(--muted);letter-spacing:0;margin-top:8px}
+.plates{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.plate{
+  display:flex;align-items:center;gap:10px;background:var(--bg);
+  border:1px solid var(--line);border-radius:10px;padding:10px 16px;font-size:14px;
+}
+.dot{width:16px;height:16px;border-radius:4px;flex:none;border:1px solid rgba(128,128,128,.35)}
+.plate b{font-weight:600}
+.plate span.txt{color:var(--muted)}
+.cta{text-align:center;margin:28px 0 8px}
+.btn{
+  display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+  padding:14px 30px;border-radius:999px;font-weight:600;
+}
+.cta p{color:var(--muted);font-size:14px;margin:12px 0 0}
+.cta p.soon{font-size:13px;opacity:.8}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:22px;margin:0 0 20px;letter-spacing:-.01em}
+h3{font-size:16px;margin:0 0 6px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.shots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.shots figure{margin:0}
+.shots img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.shots figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
+.note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:10px;padding:16px 18px;font-size:15px;color:var(--muted)}
+.note strong{color:var(--text)}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);text-align:center}
+footer a{margin:0 10px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img class="icon" src="assets/icon.png" alt="PlakettenAlarm">
+  <h1>PlakettenAlarm</h1>
+  <p class="claim">Nie mehr das Versicherungskennzeichen vergessen. Erinnerung, Plakettenfarbe und Anbietervergleich für E-Scooter, Mofa, Roller und S-Pedelec.</p>
+
+  <div class="season">
+    <div class="days"><span id="days">–</span><small id="daysLabel">Tage bis zum Wechsel am 1. März</small></div>
+    <div class="plates">
+      <div class="plate"><span class="dot" id="dotNow"></span><b id="seasonNow">–</b><span class="txt" id="colorNow"></span></div>
+      <div class="plate"><span class="dot" id="dotNext"></span><b id="seasonNext">–</b><span class="txt" id="colorNext"></span></div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <a class="btn" href="https://play.google.com/store/apps/details?id=de.plakettenalarm.app">Im Google Play Store</a>
+    <p>Kostenlos für Android. Kein Konto, keine Registrierung.</p>
+    <!-- Nach der Play-Veroeffentlichung diese eine Zeile loeschen: -->
+    <p class="soon">Die App wird derzeit für die Veröffentlichung im Play Store vorbereitet.</p>
+  </div>
+</header>
+
+<section>
+  <h2>Warum die App</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Der Stichtag ist der 1. März</h3>
+      <p>Jedes Jahr brauchen E-Scooter, Mofas, Mopeds und weitere Kleinkrafträder in Deutschland ein neues Versicherungskennzeichen. Es verlängert sich nicht automatisch.</p>
+    </div>
+    <div class="card">
+      <h3>Rechtzeitige Erinnerung</h3>
+      <p>Hinweise 6 Wochen, 2 Wochen und 1 Woche vor dem Wechsel, am Stichtag selbst und als Nachfassung danach — pro Fahrzeug einzeln steuerbar.</p>
+    </div>
+    <div class="card">
+      <h3>Farbe im Blick</h3>
+      <p>Grün, Schwarz und Blau wechseln in einem festen Dreijahreszyklus. Die App zeigt, welche Farbe gerade gilt und welche als Nächstes kommt.</p>
+    </div>
+    <div class="card">
+      <h3>Fahrzeuge und Unterlagen</h3>
+      <p>Fahrzeugtyp, Versicherer, Policennummer und Plakettenfarbe an einem Ort. Den Versicherungsschein kannst du als Foto beim Fahrzeug ablegen.</p>
+    </div>
+    <div class="card">
+      <h3>Saisonale Checkliste</h3>
+      <p>Schritt für Schritt vom Vergleich über den Abschluss bis zum Anbringen der neuen Plakette. Jede Saison startet die Liste frisch.</p>
+    </div>
+    <div class="card">
+      <h3>Homescreen-Widget</h3>
+      <p>Optionaler Countdown direkt auf dem Startbildschirm — ohne die App zu öffnen.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ansichten aus der App</h2>
+  <div class="shots">
+    <figure><img src="assets/01_countdown.png" alt="Countdown zum 1. März mit Fahrzeugliste"><figcaption>Countdown und Fahrzeuge</figcaption></figure>
+    <figure><img src="assets/03_checkliste.png" alt="Saisonale Checkliste"><figcaption>Checkliste für die Saison</figcaption></figure>
+    <figure><img src="assets/04_detail.png" alt="Fahrzeugdetails mit Versicherer und Plakettenfarbe"><figcaption>Fahrzeugdetails</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Anbietervergleich</h2>
+  <p>Die App zeigt Versicherungsanbieter passend zum Fahrzeugtyp und führt zur Angebotsseite des jeweiligen Anbieters. Der Abschluss findet dort statt — PlakettenAlarm vermittelt nicht selbst und erhebt keine Vertragsdaten.</p>
+  <p class="note"><strong>Transparenz:</strong> Als „Anzeige“ gekennzeichnete Angebote enthalten einen Affiliate-Link. Kommt darüber ein Abschluss zustande, kann PlakettenAlarm eine Provision erhalten. Für dich ändert sich der Preis dadurch nicht. Alle übrigen Einträge führen direkt zum Anbieter, ohne Provision.</p>
+</section>
+
+<section>
+  <h2>Datenschutz</h2>
+  <div class="grid">
+    <div class="card"><h3>Kein Konto, kein Server</h3><p>Es gibt keine Registrierung und keinen eigenen Server. Fahrzeugdaten, Policennummern und Dokumentfotos bleiben lokal auf dem Gerät.</p></div>
+    <div class="card"><h3>Kein Tracking</h3><p>Keine Analyse- oder Werbe-SDKs. Erinnerungen werden lokal geplant, es gibt keinen Push-Dienst.</p></div>
+    <div class="card"><h3>Auch offline nutzbar</h3><p>Anbieterliste und Rechtstexte lassen sich online aktualisieren; ein mitgelieferter Stand funktioniert ohne Internet.</p></div>
+    <div class="card"><h3>Kein Cloud-Backup</h3><p>Android-Auto-Backup und Geräteübertragung sind deaktiviert. Deine Daten landen nicht automatisch in einem Google-Drive-Backup.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Hinweis</h2>
+  <p class="note">PlakettenAlarm erklärt das deutsche Versicherungskennzeichen und die dazugehörigen Fristen. Die Inhalte sind <strong>keine Rechts- oder Versicherungsberatung</strong> und erfolgen ohne Gewähr. Beiträge und Bedingungen prüfst du bitte direkt beim Anbieter.</p>
+</section>
+
+<footer>
+  <a href="https://scorparc.github.io/legal/impressum.html">Impressum</a>
+  <a href="https://scorparc.github.io/legal/plakettenalarm/datenschutz.html">Datenschutzerklärung</a>
+  <p>© <span id="year"></span> Vardholt · PlakettenAlarm</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  // Spiegelt lib/models/plate_color.dart: Verkehrsjahr 1. Maerz bis Ende Februar,
+  // Farbzyklus ueber Startjahr % 3 (0 gruen, 1 schwarz, 2 blau).
+  var FARBEN = [
+    { name: 'Grün',    css: '#1B7A3D' },
+    { name: 'Schwarz', css: '#1C1C1C' },
+    { name: 'Blau',    css: '#1D4E9E' }
+  ];
+  function farbe(startjahr) { return FARBEN[((startjahr % 3) + 3) % 3]; }
+  function label(startjahr) {
+    return startjahr + '/' + String((startjahr + 1) % 100).padStart(2, '0');
+  }
+
+  var heute = new Date();
+  var startjahr = heute.getMonth() >= 2 ? heute.getFullYear() : heute.getFullYear() - 1;
+  var wechsel = new Date(startjahr + 1, 2, 1);
+  var tage = Math.max(0, Math.round(
+    (wechsel - new Date(heute.getFullYear(), heute.getMonth(), heute.getDate())) / 86400000
+  ));
+
+  var jetzt = farbe(startjahr), naechste = farbe(startjahr + 1);
+
+  document.getElementById('days').textContent = tage;
+  document.getElementById('daysLabel').textContent =
+    (tage === 1 ? 'Tag' : 'Tage') + ' bis zum Wechsel am 1. März';
+
+  document.getElementById('seasonNow').textContent = label(startjahr);
+  document.getElementById('colorNow').textContent = jetzt.name + ' · gilt jetzt';
+  document.getElementById('dotNow').style.background = jetzt.css;
+
+  document.getElementById('seasonNext').textContent = label(startjahr + 1);
+  document.getElementById('colorNext').textContent = naechste.name + ' · ab 1. März';
+  document.getElementById('dotNext').style.background = naechste.css;
+
+  document.getElementById('year').textContent = heute.getFullYear();
+})();
+</script>
+
+</body>
+</html>
