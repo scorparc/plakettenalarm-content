@@ -9,8 +9,14 @@
   },
   "providers" : [
     {
-      "active" : false,
-      "affiliateNetwork" : "",
+      "active" : true,
+      "affiliateNetwork" : "covomo",
+      "affiliateUrl" : "https://rechner.covomo.de/versicherungskennzeichen/?r=eyJhZmZpbGlhdGVfaWQiOiI1OTE0OTE1NjQwIiwiYSI6IjU5MTQ5MTU2NDAiLCJwYXJ0bmVyX3Rva2VuIjoiIiwib3JpZ2luIjoicG9ydGFsLmNvdm9tby5kZSJ9&partner_token=&env=live&lang=de",
+      "affiliateUrlByVehicleType" : {
+        "eScooter" : "https://rechner.covomo.de/versicherungskennzeichen/?r=eyJhZmZpbGlhdGVfaWQiOiI1OTE0OTE1NjQwIiwiYSI6IjU5MTQ5MTU2NDAiLCJwYXJ0bmVyX3Rva2VuIjoiIiwib3JpZ2luIjoicG9ydGFsLmNvdm9tby5kZSJ9&partner_token=&env=live&lang=de&fahrzeugart=e-scooter",
+        "mofa" : "https://rechner.covomo.de/versicherungskennzeichen/?r=eyJhZmZpbGlhdGVfaWQiOiI1OTE0OTE1NjQwIiwiYSI6IjU5MTQ5MTU2NDAiLCJwYXJ0bmVyX3Rva2VuIjoiIiwib3JpZ2luIjoicG9ydGFsLmNvdm9tby5kZSJ9&partner_token=&env=live&lang=de",
+        "sPedelec" : "https://rechner.covomo.de/versicherungskennzeichen/?r=eyJhZmZpbGlhdGVfaWQiOiI1OTE0OTE1NjQwIiwiYSI6IjU5MTQ5MTU2NDAiLCJwYXJ0bmVyX3Rva2VuIjoiIiwib3JpZ2luIjoicG9ydGFsLmNvdm9tby5kZSJ9&partner_token=&env=live&lang=de&fahrzeugart=s-pedelec"
+      },
       "features" : {
         "de" : [
           "Tarife mehrerer Versicherer vergleichen",
@@ -42,6 +48,7 @@
       "name" : "Covomo",
       "priceFrom" : 0,
       "priority" : 100,
+      "subIdParam" : "broker_sub_id",
       "url" : "https://rechner.covomo.de/versicherungskennzeichen/",
       "urlByVehicleType" : {
         "eScooter" : "https://rechner.covomo.de/versicherungskennzeichen/?fahrzeugart=e-scooter",
@@ -355,5 +362,5 @@
   ],
   "schemaVersion" : 2,
   "season" : "2026/27",
-  "updatedAt" : "2026-09-13"
+  "updatedAt" : "2026-11-04"
 }
